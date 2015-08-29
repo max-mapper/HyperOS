@@ -13,3 +13,11 @@ build.sh
 ````
 
 It should create `vmlinuz` (kernel) and `hypercore.gz` (filesystem)
+
+## build dev environment
+
+```
+./build-dev.sh
+```
+
+It should create `vmlinuz` (kernel) and `hypercore-dev.gz` (filesystem)
