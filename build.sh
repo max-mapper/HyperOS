@@ -4,9 +4,11 @@
 # dl release + packages (add your packages here)
 nugget http://tinycorelinux.net/6.x/x86_64/release/CorePure64-6.3.iso \
 	https://github.com/mafintosh/hyperfused/releases/download/0.0.0/hyperfused.tcz \
+	http://tinycorelinux.net/6.x/x86_64/tcz/fuse.tcz \	
 	-c
 
 # install packages
+unsquashfs -f fuse.tcz
 unsquashfs -f hyperfused.tcz
 
 # extract kernel, fs files from iso
