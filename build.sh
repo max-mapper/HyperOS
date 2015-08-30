@@ -12,7 +12,7 @@ nugget -c -d downloads \
   https://github.com/mafintosh/hyperfused/releases/download/v1.0.1/hyperfused-v1.0.1-tinycore-x64.tar.gz
 
 mkdir -p include/usr/local/bin
-tar -xf downloads/hyperfused-v1.0.1-tinycore-x64.tar.gz -C include/usr/local/bin/
+tar -xzf downloads/hyperfused-v1.0.1-tinycore-x64.tar.gz -C include/usr/local/bin/
 
 # install packages
 unsquashfs -f -d dist downloads/fuse.tcz
