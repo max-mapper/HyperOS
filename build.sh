@@ -9,11 +9,13 @@ mkdir -p downloads dist
 nugget -c -d downloads \
   $TCL_SERVER/release/distribution_files/corepure64.gz \
   $TCL_SERVER/tcz/fuse.tcz \
-  https://github.com/mafintosh/hyperfused/releases/download/0.0.0/hyperfused.tcz
+  https://github.com/mafintosh/hyperfused/releases/download/v1.0.1/hyperfused-v1.0.1-tinycore-x64.tar.gz
+
+mkdir -p include/usr/local/bin
+tar -xf downloads/hyperfused-v1.0.1-tinycore-x64.tar.gz -C include/usr/local/bin/
 
 # install packages
 unsquashfs -f -d dist downloads/fuse.tcz
-unsquashfs -f -d dist downloads/hyperfused.tcz
 
 # extract rootfs
 cd dist
@@ -28,10 +30,10 @@ cd ../
 # copy our files in
 sudo rsync --recursive include/ dist
 
-# repackage core into output.gz
+# repackage core into final output
 (cd dist ; find | sudo cpio -o -H newc) | gzip -c > hypercore.gz
 
 # cleanup
 sudo rm -rf dist
 
-# now boot vmlinuz64 and output.gz like this https://github.com/mist64/xhyve/blob/cd782515fff03bd4b80da60e29108f6b33476bf5/xhyverun.sh
+# now boot vmlinuz64 and hypercore.gz like this https://github.com/mist64/xhyve/blob/cd782515fff03bd4b80da60e29108f6b33476bf5/xhyverun.sh
