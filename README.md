@@ -1,25 +1,20 @@
 # hypercore
 
-builds a distribution of [tinycore linux](http://tinycorelinux.net/) that includes [hyperfused](https://github.com/mafintosh/hyperfused) our remote fs mounting daemon
+A distribution of [tinycore linux](http://tinycorelinux.net/) that includes [hyperfused](https://github.com/mafintosh/hyperfused) our remote fs mounting daemon
 
-part of http://hyperos.io/
+The goal of HyperCore is to provide the most minimal possible linux host environment that can be used to remote mount data + containers for higher level workflows
+
+HyperCore is part of http://hyperos.io/
 
 ## build it
 
-Note: only builds on Linux
-
 ```
-apt-get install squashfs-tools
-npm i nugget -g
-build.sh
+apt-get install squashfs-tools # brew install squashfs on mac
+npm i nugget -g  
+./download.sh
+./build.sh
 ````
 
-It should create `vmlinuz` (kernel) and `hypercore.gz` (filesystem)
+It should create `vmlinuz` (kernel) and `initrd.gz` (filesystem)
 
-## build dev environment
-
-```
-./build-dev.sh
-```
-
-It should create `vmlinuz` (kernel) and `hypercore-dev.gz` (filesystem)
+Prebuilt releases are available at https://github.com/maxogden/hypercore/releases
