@@ -1,4 +1,7 @@
 node_modules
 .DS_Store
-hypercore.gz
-vmlinuz
+linux/
+tczs/
+vmlinuz64
+corepure64.gz
+initrd.gz
