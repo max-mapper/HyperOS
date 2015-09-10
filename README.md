@@ -2,6 +2,8 @@
 
 builds a distribution of [tinycore linux](http://tinycorelinux.net/) that includes [hyperfused](https://github.com/mafintosh/hyperfused) our remote fs mounting daemon
 
+part of http://hyperos.io/
+
 ## build it
 
 Note: only builds on Linux
