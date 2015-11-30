@@ -8,12 +8,16 @@ HyperCore is part of http://hyperos.io/
 
 ## build it
 
-```
-apt-get install squashfs-tools # brew install squashfs on mac
-npm i nugget -g  
+```sh
 ./download.sh
 ./build.sh
 ````
+
+## dependencies
+
+The following dependencies will be installed:
+- `unsquashfs` package to create an OS image
+- `nugget` package to pull data over the wire
 
 It should create `vmlinuz` (kernel) and `initrd.gz` (filesystem)
 
