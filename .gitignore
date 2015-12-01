@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 linux/
+dist/
 tczs/
 vmlinuz64
 corepure64.gz

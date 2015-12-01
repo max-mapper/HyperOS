@@ -1,5 +1,23 @@
 #!/bin/sh
-# prerequisites: apt-get install squashfs-tools/brew install squashfs
+
+# install missing dependencies
+which unsquashfs > /dev/null
+if [ "$?" != 0 ]; then
+  printf 'Installing missing dependency: unsquashfs'
+  if [ "$(uname)" = "Darwin" ]; then
+    brew install squashfs
+  elif [ "$(uname)" = "Linux" ]; then
+    apt-get install squashfs-tools
+  fi
+  [ "$?" = 0 ] || { printf 'Could not install unsquashfs' && exit 1; }
+fi
+
+which nugget > /dev/null
+if [ "$?" != 0 ]; then
+  printf 'Installing missing dependency: nugget'
+  npm install -g nugget
+  [ "$?" = 0 ] || { printf 'Could not install nugget' && exit 1; }
+fi
 
 # exit on any error
 set -e
