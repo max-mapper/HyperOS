@@ -3,6 +3,7 @@
 
 # sanity check
 sudo chown -R tc /home/tc
+sudo chown root /var/lib/sshd
 
 # for ssh login (will generate local keypairs on first run automaticalliy)
 sudo /usr/local/etc/init.d/openssh start

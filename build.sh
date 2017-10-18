@@ -38,9 +38,11 @@ sudo sed -ix "/^# ttyS0$/s#^..##" etc/securetty
 sudo sed -ix "/^tty1:/s#tty1#ttyS0#g" etc/inittab
 
 # configure ssh server
-sudo cp usr/local/etc/ssh/sshd_config_example usr/local/etc/ssh/sshd_config
+sudo cp ../sshd_config usr/local/etc/ssh/sshd_config
 sudo mkdir var/ssh
 sudo chmod 0755 var/ssh
+sudo mkdir var/lib/sshd
+sudo chmod 0755 var/lib/sshd
 sudo mkdir -p home/tc/.ssh
 
 # leave dist
