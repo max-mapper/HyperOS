@@ -1,0 +1,11 @@
+[Unit]
+Description=Set ssh key for hypercore login
+Wants=network-pre.target
+Before=network-pre.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/bin/set-ssh-auth-key
+
+[Install]
+WantedBy=multi-user.target
