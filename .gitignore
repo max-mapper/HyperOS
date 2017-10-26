@@ -3,5 +3,5 @@ node_modules
 linux/
 dist/
 bzImage
-4.gz
 initrd.gz
+images
