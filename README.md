@@ -8,7 +8,7 @@ You can install it easily using the `npm install linux -g` module on npm.
 
 ## build it
 
-Download Buildroot on a linux machine. Rename `buildroot-config` to `buildroot/.config` and rename `linux-config` to whatever file `make linux-menuconfig` edits (I think it's a `.config` file in `buildroot/output/` somewhere).
+Download Buildroot on a linux machine. Rename `buildroot-config` to `buildroot/.config` and rename `linux-config` to whatever file `make linux-menuconfig` edits (Should be something like `buildroot/output/build/linux-*/.config`).
 
 The linux config enables `virtio-net` drivers in the linux kernel, which are disabled in Buildroot by default. You can also use `make menuconfig` to modify packages etc that are installed in the root filesystem. Currently `systemd` is the main requirement so that we can use `systemd-nspawn`. We also include openssh, fuse and a couple other utilities needed by dat-container.
 
