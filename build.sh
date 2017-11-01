@@ -15,7 +15,9 @@ cat ../rootfs.cpio | sudo cpio -idmv
 cd ../
 
 # copy our files in
-sudo rsync -l --recursive include/ dist
+sudo rsync -pl --recursive include/ dist
+
+# sudo find . -name ‘*.DS_Store’ -type f -delete
 
 # repackage core into final output
 (cd dist ; sudo find . | sudo cpio -o -H newc) | gzip -c > initrd.gz
