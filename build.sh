@@ -14,6 +14,11 @@ cat ../rootfs.cpio | sudo cpio -idmv
 # leave dist
 cd ../
 
+# shrink dat-container
+# rm -rf include/usr/lib/node_modules/dat-container/node_modules/esprima/test
+# rm -rf ./usr/lib/node_modules/dat-container/node_modules/sodium-native/prebuilds/
+# rm -rf ./usr/lib/node_modules/dat-container/node_modules/utp-native/prebuilds/
+
 # copy our files in
 sudo rsync -pl --recursive include/ dist
 

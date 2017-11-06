@@ -5,4 +5,4 @@ dist/
 bzImage
 initrd.gz
 images
-rootfs.cpio
+rootfs.cpio*
